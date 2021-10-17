@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <title>타임콤비 회원가입</title>
+    <style>
+        body{
+            background-color: #ffffff;
+            background-image: url('joinbox.png');  
+            background-position: center top;
+            background-size: 470px;
+            background-position-y: 40px;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+    </style>
+</head>
+<script>
+    function check_pw(){
+      var p1 = document.getElementById('pw').value;
+      var p2 = document.getElementById('pwCheck').value;
+
+      if(p1.length < 6) {
+              alert('입력한 글자가 6글자 이상이어야 합니다.');
+              p1.focus();
+              return false;
+          }
+          
+          if( p1 != p2 ) {
+            document.getElementById('check').innerHTML="<font color=red>비밀번호가 불일치합니다.</font>"
+            return false;
+          } else{
+            document.getElementById('check').innerHTML="<font color=#65a2ff>비밀번호가 일치합니다.</font>"
+            return true;
+          }
+}
+</script>
+<body>
+    <form method="get"  style=" text-align : center; padding-top: 150px; padding-bottom: 40px; ">
+        <p style="font-size: small; color: black; text-align: center; "><strong>이름</strong>  
+        <input type="text" name="name " placeholder="이름"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"></p><br>
+        <p style="font-size: small; color: black; text-align: match-parent; padding-inline-end: 10px; "><strong>이메일</strong>
+        <input type="text" name="email " placeholder="이메일"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"> </p><br>
+        <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 20px; "><strong>비밀번호</strong>
+        <input type="password" name="pw" id="pw"  onchange="check_pw()" placeholder="비밀번호" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> </p><br>
+        <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 50px;"><strong>비밀번호 확인</strong>
+        <input type="password" name="repw"  id="pwCheck" onchange="check_pw()" placeholder="비밀번호 확인" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> 
+        </p>
+        <p id="check" style="font-size:x-small; color:red; text-align: center; padding-inline-end: 100px; padding-top: -20px; padding-bottom: 10px; ">비밀번호가 불일치합니다.</p>
+        <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 10px; "><strong>연락처 </strong>
+        <input type="text" name="phone" placeholder="연락처" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"></p><br>
+        <a href="login.html">
+            <img src="joinbtn.png" style="text-align: center; width: 80px;" />
+        </a><br>
+    </form>
+
+</body>
+</html>
