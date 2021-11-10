@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/mypage.css">
+  <title>마이페이지 : 타임 콤비</title>
+</head>
+<script>
+  function check_pw(){
+    var p1 = document.getElementById('pw').value;
+    var p2 = document.getElementById('pwCheck').value;
+
+    if(p1.length < 6) {
+            alert('입력한 글자가 6글자 이상이어야 합니다.');
+            p1.focus();
+            return false;
+        }
+        
+        if( p1 != p2 ) {
+          document.getElementById('check').innerHTML="<font color=red>비밀번호가 불일치합니다.</font>"
+          return false;
+        } else{
+          document.getElementById('check').innerHTML="<font color=#65a2ff>비밀번호가 일치합니다.</font>"
+          return true;
+        }
+}
+</script>
+<body>
+  <input type="checkbox" id="menu">
+  <label for="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div class="background_black"></div>
+
+  <header id="header">
+    <div class="logo">
+      <img src="../images/timecombi_logo.png" alt="타임콤비 로고">
+      <h1>타임콤비</h1>
+    </div>
+    <div class="profile">
+      <img src="../images/profile.png" alt="프로필 사진">
+      <div class="name">
+        <span class="user_name">홍길동</span>
+        <button class="logout"></button>
+      </div>
+    </div>
+    <div class="header_menu">
+      <ul>
+        <li>
+          <a href="#">내 일정</a>
+        </li>
+        <li>
+          <a href="#">일정 계산기</a>
+        </li>
+        <li>
+          <a href="#">친구</a>
+        </li>
+        <li>
+          <a href="../html/mypage.html">마이 페이지</a>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>ⓒTimeCombi</p>
+    </div>
+  </header>
+  <section>
+
+    <div class="mobile_header">
+      <div class="logo">
+        <img src="../images/timecombi_logo.png" alt="타임콤비 로고">
+        <h1>타임콤비</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="heading">
+        마이페이지
+        <hr size="1" color="#C2C2C2">
+        <div class="box">
+          <div class="profile">
+            <img src="../images/profile.png" alt="프로필 사진">
+          </div>
+          <form method="get"  style=" text-align : center; padding-top: 10px; padding-bottom: 10px; ">
+            <p style="font-size: small; color: black; text-align: center; "><strong>이름</strong>  
+            <input type="text" name="name " placeholder="홍길동"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"></p><br>
+            <p style="font-size: small; color: black; text-align: match-parent; padding-inline-end: 10px; "><strong>이메일</strong>
+            <input type="text" name="email " placeholder="hong@gmail.com"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"> </p><br>
+            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 20px; "><strong>비밀번호</strong>
+            <input type="password" name="pw" id="pw"  onchange="check_pw()" placeholder="honghong1" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> </p><br>
+            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 50px;"><strong>비밀번호 확인</strong>
+            <input type="password" name="repw"  id="pwCheck" onchange="check_pw()" placeholder="honghong1" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> 
+            </p>
+            <p id="check" style="font-size:x-small; color:red; text-align: center; padding-inline-end: 100px; padding-top: -20px; padding-bottom: 10px; ">비밀번호가 불일치합니다.</p>
+            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 10px; "><strong>연락처 </strong>
+            <input type="text" name="phone" placeholder="010-1234-5678" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"></p><br>
+            <a href="../html/mypage.html">
+                <img src="../images/fixinfobtn.png" style="text-align: center; width: 80px;" />
+            </a><br>
+            <a href="../html/login.html" style="color: #C2C2C2; font-size:x-small; text-align: center;">회원탈퇴</a>
+        </form>
+  
+        </div>
+
+       
+      </div>
+
+  </div>
+    
+  </section>
+</body>
+</html>
