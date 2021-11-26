@@ -1,0 +1,8 @@
+.calculator_btn button {
+  width: 90px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #7cabe9;
+  margin: 0 10px;
+  font-size: 1rem;
+}

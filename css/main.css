@@ -45,6 +45,9 @@ section {
 
 /* 반응형 */
 @media screen and (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
   header {
     right: -230px;
   }

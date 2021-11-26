@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/calculator.css">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <label for="">그룹 선택</label>
+    </fieldset>
+    <fieldset>
+      <label for="">콤비 기간</label>
+      <input type="date" name="start_combi" id="start_combi"> ~
+      <input type="date" name="last_combi" id="last_combi">
+    </fieldset>
+    <fieldset>
+      <label for="">콤비 시간</label>
+      <input type="number" min="0" max="10" value="0">일
+      <input type="number" min="30" max="600" step="30" value="30">분
+    </fieldset>
+    <fieldset>
+      <label for="">콤비 시간대</label>
+      <input type="checkbox" id="dawn" name="새벽">
+      <label for="evening">새벽(0시~6시)</label>
+      <input type="checkbox" id="morning" name="오전">
+      <label for="morning">오전(6시~12시)</label>
+      <input type="checkbox" id="afternoon" name="오후">
+      <label for="afternoon">오후(12시~18시)</label>
+      <input type="checkbox" id="evening" name="저녁">
+      <label for="evening">저녁(18시~24시)</label><br>
+    </fieldset>
+    <fieldset class="calculator_btn"> 
+      <button type="submit">계산하기</button>
+    </fieldset>
+  </form>
+</body>
+</html>
