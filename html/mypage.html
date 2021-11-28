@@ -53,7 +53,7 @@
     <div class="header_menu">
       <ul>
         <li>
-          <a href="#">내 일정</a>
+          <a href="../html/">내 일정</a>
         </li>
         <li>
           <a href="#">일정 계산기</a>
@@ -88,25 +88,40 @@
           <div class="profile">
             <img src="../images/profile.png" alt="프로필 사진">
           </div>
-          <form method="get"  style=" text-align : center; padding-top: 10px; padding-bottom: 10px; ">
-            <p style="font-size: small; color: black; text-align: center; "><strong>이름</strong>  
-            <input type="text" name="name " placeholder="홍길동"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"></p><br>
-            <p style="font-size: small; color: black; text-align: match-parent; padding-inline-end: 10px; "><strong>이메일</strong>
-            <input type="text" name="email " placeholder="hong@gmail.com"  style="border: 2px solid #aecefd; width: 240px; height: 25px; border-radius: 5px;"> </p><br>
-            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 20px; "><strong>비밀번호</strong>
-            <input type="password" name="pw" id="pw"  onchange="check_pw()" placeholder="honghong1" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> </p><br>
-            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 50px;"><strong>비밀번호 확인</strong>
-            <input type="password" name="repw"  id="pwCheck" onchange="check_pw()" placeholder="honghong1" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"> 
-            </p>
-            <p id="check" style="font-size:x-small; color:red; text-align: center; padding-inline-end: 100px; padding-top: -20px; padding-bottom: 10px; ">비밀번호가 불일치합니다.</p>
-            <p style="font-size: small; color: black; text-align:  match-parent; padding-inline-end: 10px; "><strong>연락처 </strong>
-            <input type="text" name="phone" placeholder="010-1234-5678" style="border: 2px solid #aecefd;  width: 240px; height: 25px; border-radius: 5px;"></p><br>
-            <a href="../html/mypage.html">
-                <img src="../images/fixinfobtn.png" style="text-align: center; width: 80px;" />
-            </a><br>
-            <a href="../html/login.html" style="color: #C2C2C2; font-size:x-small; text-align: center;">회원탈퇴</a>
+
+          <form name="mypageform" method="post">
+                <table>
+                   <tr>
+                      <th class="name">이름</th>
+                      <td><input type="text" placeholder="이름" name="name" class="pwchk"></td>
+                   </tr>
+                   <tr>
+                      <th class="name">이메일</th>
+                      <td><input class="pwchk" type="text" name="email" placeholder="이메일"></td>
+                   </tr>
+                   <tr>
+                      <th class="name">비밀번호</th>
+                      <td><input class="pwchk" type="password" id="pw" name="pw" onchange="check_pw()" placeholder="비밀번호"></td>
+                   </tr>
+                   <tr>
+                      <th class="name ">비밀번호 확인</th>
+                      <td><input class="pwchk" type="password" id="pwCheck" onchange="check_pw()" placeholder="비밀번호 확인"></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th id="check" class="chk">비밀번호가 불일치합니다.</th>
+                    </tr>
+                    <tr>
+                        <th class="name">연락처</th>
+                        <td> <input class="pwchk" type="text" name="phone" placeholder="연락처"></td>
+                    </tr>
+                </table>
+                <br>
+                <div class="btn">
+                    <input class="button"  value= "수정하기" type="submit">
+                </div>
         </form>
-  
+
         </div>
 
        
