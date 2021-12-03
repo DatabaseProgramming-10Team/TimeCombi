@@ -1,4 +1,6 @@
-/* 모바일 메뉴 버튼 */
+.main_menu {
+  display: none;
+}
 
 /* PC 메뉴바 */
 header {
@@ -112,6 +114,11 @@ section .mobile_header .logo h1 {
 }
 
 @media screen and (max-width: 768px) {
+  /* 모바일 메뉴 버튼 */
+  .main_menu {
+    display: inline;
+  }
+
   input[id="menu"] {
     display: none;
   }
