@@ -61,12 +61,10 @@
     </div>
 
     <div class="content">
-
       <div class="heading">
         친구 목록
         <hr size="1" color="#C2C2C2">
-      
-
+    
         <div class="btn">
             <button id="setfriend" >친구 관리</button>  
             <button id="fix" onclick="ck();">편집</button>    
@@ -230,81 +228,42 @@
           </div>
         </div>
 
-
-        <!--친구 목록-->
-        <div class="box">
-            <table class="list-table">
-              <colgroup>
-                  <!-- column을 1:9로 나눔 -->
-                  <col width="15%">
-                  <col width="85%">
-              </colgroup>
-  
-              <thead>
-                  <tr>
-                      <th>그룹</th>
-                  </tr>
-              </thead>
-              <tbody id="listBody">
-                  <tr>
-                      <td><input type="checkbox" class="btn-chk" ></td>
-                      <td><label for="vehicle1">프로그래밍 스터디(4)</label></td>
-                  </tr>
-                  <tr>
-                      <td><input type="checkbox" class="btn-chk"></td>
-                      <td>밴드 동아리(13)</td>
-                  </tr>
-                  <tr>
-                      <td><input type="checkbox" class="btn-chk"></td>
-                      <td>영어 토익 스터디(5)</td>
-                  </tr>
-              </tbody>
-
-              <thead>
-                <tr>
-                    <th>친구</th>
-                </tr>
-            </thead>
-            <tbody id="listBody">
-                <tr>
-                    <td><input type="checkbox" class="btn-chk"></td>
-                    <td><img src="../images/profile.png" style=" width: 40px;
-                      border-radius: 30px;
-                      border: 2px solid #aecefd; margin-right: 5px;">홍길동</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="btn-chk"></td>
-                    <td>홍길서</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="btn-chk"></td>
-                    <td>홍길남</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="btn-chk"></td>
-                  <td>홍길북</td>
-                  <tr>
-                    <td><input type="checkbox" class="btn-chk"></td>
-                    <td>김민지</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="btn-chk"></td>
-                  <td>이현지</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" class="btn-chk"></td>
-                <td>박지연</td>
-            </tr>
-            </tbody>
-          </table>
-
         
         </div>
-
         </div>
       </div>
-
   </div>
+
+       <!--친구 목록-->
+       <fieldset>
+        <span class="title">친구 목록</span>
+        <div class="friend_list">
+          <ul class="groups">
+            <li>
+              <input type="checkbox">
+              <img src="../images/profile.png" name="group" alt="profile">
+              <p>프로그래밍 스터디 (4)</p>
+            </li>
+          </ul>
+          <ul class="friends">
+            <li>
+              <input type="checkbox" name="friend" value="홍길동">
+              <img src="../images/profile.png" alt="profile">
+              <p>홍길동</p>
+            </li>
+            <li>
+              <input type="checkbox" name="friend" value="가나다">
+              <img src="../images/profile.png" alt="profile">
+              <p>가나다</p>
+            </li>
+            <li>
+              <input type="checkbox" name="friend" value="라마바">
+              <img src="../images/profile.png" alt="profile">
+              <p>라마바</p>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
     
   </section>
   <script type="text/JavaScript" src="../js/app.js"></script>
