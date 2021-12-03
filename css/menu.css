@@ -1,67 +1,4 @@
 /* 모바일 메뉴 버튼 */
-input[id="menu"] {
-  display: none;
-}
-
-input[id="menu"] + label {
-  display: block;
-  width: 25px;
-  height: 20px;
-  position: absolute;
-  cursor: pointer;
-  top: 12px;
-  right: 10px;
-  z-index: 1;
-}
-
-input[id="menu"] + label span {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  border-radius: 30px;
-  background-color: white;
-  transition: all 0.35s;
-}
-
-input[id="menu"] + label span:nth-child(1) {
-  top: 0;
-}
-
-input[id="menu"] + label span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-input[id="menu"] + label span:nth-child(3) {
-  bottom: 0;
-}
-
-input[id="menu"]:checked ~ .background_black {
-  display: block;
-}
-input[id="menu"]:checked ~ label {
-  z-index: 3;
-}
-
-input[id="menu"]:checked ~ header {
-  right: 0;
-  z-index: 2;
-}
-
-input[id="menu"]:checked + label span:nth-child(1) {
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-input[id="menu"]:checked + label span:nth-child(2) {
-  opacity: 0;
-}
-
-input[id="menu"]:checked + label span:nth-child(3) {
-  bottom: 50%;
-  transform: translateY(50%) rotate(-45deg);
-}
 
 /* PC 메뉴바 */
 header {
@@ -172,4 +109,70 @@ section .mobile_header .logo h1 {
   font-size: 20px;
   font-weight: 700;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  input[id="menu"] {
+    display: none;
+  }
+
+  input[id="menu"] + label {
+    display: block;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+    top: 12px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  input[id="menu"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background-color: white;
+    transition: all 0.35s;
+  }
+
+  input[id="menu"] + label span:nth-child(1) {
+    top: 0;
+  }
+
+  input[id="menu"] + label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  input[id="menu"] + label span:nth-child(3) {
+    bottom: 0;
+  }
+
+  input[id="menu"]:checked ~ .background_black {
+    display: block;
+  }
+  input[id="menu"]:checked ~ label {
+    z-index: 3;
+  }
+
+  input[id="menu"]:checked ~ header {
+    right: 0;
+    z-index: 2;
+  }
+
+  input[id="menu"]:checked + label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  input[id="menu"]:checked + label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  input[id="menu"]:checked + label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
 }

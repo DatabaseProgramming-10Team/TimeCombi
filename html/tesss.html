@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/calculator.css">
+  <title>내 일정 : 타임 콤비</title>
+</head>
+<body>
+  <input type="checkbox" id="menu">
+  <label for="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div class="background_black"></div>
+
+  <header id="header">
+    <div class="logo">
+      <img src="../images/timecombi_logo.png" alt="타임콤비 로고">
+      <h1>타임콤비</h1>
+    </div>
+    <div class="profile">
+      <img src="../images/profile.png" alt="프로필 사진">
+      <div class="name">
+        <span class="user_name">홍길동</span>
+        <button class="logout"></button>
+      </div>
+    </div>
+    <div class="header_menu">
+      <ul>
+        <li>
+          <a href="#">내 일정</a>
+        </li>
+        <li>
+          <a href="#">일정 계산기</a>
+        </li>
+        <li>
+          <a href="../html/friends.html">친구</a>
+        </li>
+        <li>
+          <a href="../html/mypage.html">마이 페이지</a>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>ⓒTimeCombi</p>
+    </div>
+  </header>
+  <section>
+    <div class="mobile_header">
+      <div class="logo">
+        <img src="../images/timecombi_logo.png" alt="타임콤비 로고">
+        <h1>타임콤비</h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="heading">
+        내 일정
+      </div>
+      <div class="container">
+        <form class="combi_calculator" action="">
+          <fieldset>
+            <span class="title">친구 선택</span>
+            <div class="friend_list">
+              <ul class="groups">
+                <li>
+                  <input type="checkbox">
+                  <img src="../images/profile.png" name="group" alt="profile">
+                  <p>프로그래밍 스터디 (4)</p>
+                </li>
+              </ul>
+              <ul class="friends">
+                <li>
+                  <input type="checkbox" name="friend" value="홍길동">
+                  <img src="../images/profile.png" alt="profile">
+                  <p>홍길동</p>
+                </li>
+                <li>
+                  <input type="checkbox" name="friend" value="가나다">
+                  <img src="../images/profile.png" alt="profile">
+                  <p>가나다</p>
+                </li>
+                <li>
+                  <input type="checkbox" name="friend" value="라마바">
+                  <img src="../images/profile.png" alt="profile">
+                  <p>라마바</p>
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+          <fieldset class="choice">
+            <div class="title">
+              <span>콤비 기간</span>
+              <div class="question">?
+                <div class="explanation">모임이 필요한 기간을 선택해주세요</div>
+              </div>
+            </div>
+            <div class="organize">
+              <input type="date" name="start_combi_date" id="start_combi_date" required> ~
+              <input type="date" name="last_combi_date" id="last_combi_date" required>
+            </div>
+          </fieldset>
+          <fieldset class="choice">
+            <div class="title">
+              <span>콤비 시간</span>
+              <div class="question">?
+                <div class="explanation">모임의 시작 시간과 종료 시간을 입력해주세요</div>
+              </div>
+            </div>
+            <div class="organize">
+              <div class="start"><input type="number" min="0" max="24" value="0" name="start_hour">시
+                <input type="number" min="0" max="60" step="30" value="0" name="start_minute">분</div> ~
+              <div class="last">
+                <input type="number" min="0" max="24" value="0" name="last_hour">시
+              <input type="number" min="0" max="60" step="30" value="0" name="last_minute">분
+              </div>
+            </div>
+          </fieldset>
+      
+          <!-- <fieldset>
+            <div class="title">
+              <span>콤비 시간</span>
+              <div class="question">?
+                <div class="explanation">모임에 걸리는 시간을 입력해주세요. (30분 단위)</div>
+              </div>
+            </div>
+            <div class="organize">
+              <input type="number" min="0" max="10" value="0">일
+              <input type="number" min="30" max="600" step="30" value="30">분
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="title">
+              <span>콤비 시간대</span>
+              <div class="question">?
+                <div class="explanation">모임을 진행하기 원하는 시간대를 선택해주세요.</div>
+              </div>
+            </div>
+            <div class="organize">
+              <label for="dawn"><input type="checkbox" id="dawn" name="새벽">새벽 (00시~06시)</label>
+              <label for="morning"><input type="checkbox" id="morning" name="오전">오전 (06시~12시)</label>
+              <label for="afternoon"><input type="checkbox" id="afternoon" name="오후">오후 (12시~18시)</label>
+              <label for="evening"><input type="checkbox" id="evening" name="저녁">저녁 (18시~24시)</label>
+            </div>
+          </fieldset> -->
+          <fieldset class="calculator_btn">
+            <button type="submit">계산하기</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -276,7 +276,7 @@
   width: 170px;
 }
 
-.popup_add_date .time input[type="checkbox"]:checked ~ {
+.popup_add_date .time input[type="checkbox"]:checked ~ input[type="time"] {
 }
 
 .popup_add_date .day input[type="checkbox"] {

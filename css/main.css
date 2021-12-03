@@ -43,6 +43,19 @@ section {
   padding-left: 230px;
 }
 
+section .content .heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid #c2c2c2;
+  padding: 15px 10px;
+  margin-bottom: 15px;
+}
+
+section .content .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 /* 반응형 */
 @media screen and (max-width: 768px) {
   * {
