@@ -1,4 +1,6 @@
+const offset = new Date().getTimezoneOffset() * 60000;
 let date = new Date();
+let tempDate = new Date(Date.now() - offset);
 let dateDivs = document.querySelectorAll(".date");
 const whatDay = function (day) {
   if (day == 0) return "일";
@@ -8,6 +10,24 @@ const whatDay = function (day) {
   else if (day == 4) return "목";
   else if (day == 5) return "금";
   else if (day == 6) return "토";
+};
+
+const setDateTime = function (tempDate) {
+  //일정 추가 - 날짜 설정
+  document.getElementById("start_date").value = tempDate
+    .toISOString()
+    .substring(0, 10);
+  document.getElementById("last_date").value = tempDate
+    .toISOString()
+    .substring(0, 10);
+
+  //일정 추가 - 시간 설정
+  let time = new Date(Date.now() - offset).toISOString().substring(11, 13);
+  document.getElementById("start_time").value = time + ":00";
+  document.getElementById("last_time").value =
+    parseInt(time) + 1 > 9
+      ? parseInt(time) + 1 + ":00"
+      : "0" + (parseInt(time) + 1) + ":00";
 };
 
 const calendar = function () {
@@ -57,11 +77,11 @@ const calendar = function () {
     nextDates.push(i);
   }
 
+  //날짜 출력
   let dates = prevDates.concat(thisDates, nextDates);
   const firstDateIndex = dates.indexOf(1);
   const lastDateIndex = dates.lastIndexOf(thisDate);
   dates.forEach((date, i) => {
-    //${year}${month}${date}
     let condition;
     if (i < firstDateIndex) condition = "other prev";
     else if (i >= lastDateIndex + 1) condition = "other next";
@@ -98,7 +118,6 @@ const calendar = function () {
         event.currentTarget.id = "clickDate";
         clickDate.id = "";
         clickDate = event.currentTarget;
-        let tempDate;
         if (event.currentTarget.childNodes[0].className == "other prev") {
           tempDate = new Date(
             Date.UTC(
@@ -125,49 +144,41 @@ const calendar = function () {
         document.querySelector(
           ".today"
         ).innerHTML = `${tempDate.getDate()}일 (${whatDay(tempDate.getDay())})`;
+        setDateTime(tempDate);
       }
     })
   );
 };
 
+//이전 달 이동
 const prevMonth = () => {
   date.setDate(1);
   date.setMonth(date.getMonth() - 1);
   calendar();
+  date.setDate(date.getDate() + 1);
+  setDateTime(date);
 };
 
+//다음 달 이동
 const nextMonth = () => {
   date.setDate(1);
   date.setMonth(date.getMonth() + 1);
   calendar();
+  date.setDate(date.getDate() + 1);
+  setDateTime(date);
 };
 
-const goToday = () => {
-  date = new Date();
-  calendar();
-};
+//달력 생성
+calendar();
+setDateTime(tempDate);
 
-calendar(date);
-
-document.getElementById("start_date").value = new Date()
-  .toISOString()
-  .substring(0, 10);
-document.getElementById("last_date").value = new Date()
-  .toISOString()
-  .substring(0, 10);
-
-let time = new Date().toISOString().substring(11, 13);
-document.getElementById("start_time").value = time + ":00";
-document.getElementById("last_time").value =
-  parseInt(time) + 1 > 9
-    ? parseInt(time) + 1 + ":00"
-    : "0" + (parseInt(time) + 1) + ":00";
-
+//일정 추가 - 팝업창 실행 및 종료
 let background_blackEl = document.querySelector(".background_black");
 let popup_add_dateEl = document.querySelector(".popup_add_date");
 background_blackEl.addEventListener("click", function () {
   popup_add_dateEl.style.display = "none";
   background_blackEl.style.display = "none";
+  document.querySelector(".main_menu").checked = false;
 });
 
 document.querySelector(".cancel").addEventListener("click", function () {
@@ -180,6 +191,7 @@ document.querySelector(".plus_btn").addEventListener("click", function () {
   background_blackEl.style.display = "block";
 });
 
+//일정 추가 - 종일 버튼 체크 시 비활성화/활성화
 let check = document.querySelector(".allday");
 let timeEl = document.querySelectorAll(
   ".popup_add_date .time input[type='time']"
@@ -197,5 +209,3 @@ check.addEventListener("click", (e) => {
     });
   }
 });
-
-console.log();

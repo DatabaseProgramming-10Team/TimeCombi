@@ -96,7 +96,7 @@
 }
 
 #clickDate {
-  background-color: seagreen;
+  background-color: #ff7373;
 }
 
 .calendar .main .days .day:nth-child(7n + 1),
