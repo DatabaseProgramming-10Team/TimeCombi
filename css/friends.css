@@ -8,14 +8,39 @@
     padding: 0;
   }
 
+  /*팝업창 리스트*/
+  .setting_list{
+    width: 85%;
+    background-color: white;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 0.5rem 15px;
+    overflow: auto;
+    margin-bottom: 30px;
+  }
+  .setting_list ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .setting_list ul li img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+  }
 
+  /*친구목록 리스트*/
   .friend_list {
-    width: 100%;
+    width: 85%;
     border: 3px solid #c2c2c2;
     background-color: white;
     height: 300px;
     border-radius: 10px;
     margin-top: 5px;
+    margin-left: 45px;
     padding: 0.5rem 15px;
     overflow: auto;
     margin-bottom: 30px;
@@ -120,7 +145,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
-    height: 300px;
+    height: 440px;
 }
 
 
@@ -154,20 +179,24 @@
     display: none;
   } 
 
-
-
   .groupfile{
     text-align:left;
-    margin-left: 100px;
-    margin-top: 10px;
+    margin-left: 60px;
+    margin-bottom: 20px;
   }
 
   .groupfile > img {
     width: 60px;
     border-radius: 30px;
     border: 3px solid #aecefd;
+    vertical-align: middle;
   }
 
+  .groupfile > input{
+    width: 140px; 
+    height: 25px;  
+    border: 1px solid rgb(219, 218, 218); 
+  }
 
   .profile {
     text-align:center;
@@ -183,7 +212,7 @@
   .btn{
     display: flex;
     justify-content: right;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     margin: 40px auto 5px;
   }
@@ -193,9 +222,9 @@
     background-color: #ffffff;
     padding-left: 10px;
     padding-right: 10px;
+    margin-right: 5px;
   }
 
- 
 
   .btn2 > button{
     border: 1px solid #DDDDDD;
@@ -216,7 +245,13 @@
 
   .box1{
     width: 520px; 
-    margin-left: 70px;
+    margin-left: 55px;
+  }
+
+  .box1 > p{
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
   }
   
   .box::-webkit-scrollbar {
@@ -313,10 +348,9 @@ li{
     margin: 7% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
-    height: 650px;
+    width: 45%;
+    height: 600px;
 }
-
 
 
    /* 친구 추가 배경 */
@@ -341,7 +375,7 @@ li{
     padding: 20px;
     border: 1px solid #888;
     width: 34%;
-    height: 370px;
+    height: 450px;
 }
 /* The Close Button */
 .close {
@@ -359,10 +393,16 @@ li{
 
 .search{
   position: absolute;
-  top: 50%;
-  left: 48%;
+  top: 56%;
+  left: 50%;
   transform: translate(-50%,-50%);
-  margin-top: 55px;
+  margin-top: 60px;
+}
+
+.search > input{
+  width: 240px; 
+  height: 30px;  
+  border: 1px solid rgb(219, 218, 218);
 }
 
 .search2{
@@ -397,8 +437,6 @@ li{
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
-  /*margin-left: 100px;*/
-  margin-top: 10px;
 }
 .srhbtn{
     width: 40px;
@@ -408,7 +446,6 @@ li{
     background-color: #aecefd;
     color:black;
     float:right;
-    margin-top: 10px;
     margin-right: 8px;
 
     text-align: center;
