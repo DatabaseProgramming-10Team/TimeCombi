@@ -163,4 +163,39 @@ document.getElementById("last_time").value =
     ? parseInt(time) + 1 + ":00"
     : "0" + (parseInt(time) + 1) + ":00";
 
-// 날짜 직접 선택
+let background_blackEl = document.querySelector(".background_black");
+let popup_add_dateEl = document.querySelector(".popup_add_date");
+background_blackEl.addEventListener("click", function () {
+  popup_add_dateEl.style.display = "none";
+  background_blackEl.style.display = "none";
+});
+
+document.querySelector(".cancel").addEventListener("click", function () {
+  popup_add_dateEl.style.display = "none";
+  background_blackEl.style.display = "none";
+});
+
+document.querySelector(".plus_btn").addEventListener("click", function () {
+  popup_add_dateEl.style.display = "flex";
+  background_blackEl.style.display = "block";
+});
+
+let check = document.querySelector(".allday");
+let timeEl = document.querySelectorAll(
+  ".popup_add_date .time input[type='time']"
+);
+check.addEventListener("click", (e) => {
+  const checked = e.target.checked;
+  if (checked) {
+    timeEl.forEach((element) => {
+      element.disabled = true;
+      element.value = "00:00";
+    });
+  } else {
+    timeEl.forEach((element) => {
+      element.disabled = false;
+    });
+  }
+});
+
+console.log();
