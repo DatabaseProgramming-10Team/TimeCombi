@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/calendar.css">
   <link rel="stylesheet" href="../css/calculator.css">
   <title>내 일정 : 타임 콤비</title>
 </head>
 <body>
-  <input type="checkbox" id="menu">
+  <input type="checkbox" id="menu" class="main_menu">
   <label for="menu">
     <span></span>
     <span></span>
@@ -63,95 +64,147 @@
         내 일정
       </div>
       <div class="container">
-        <form class="combi_calculator" action="">
-          <fieldset>
-            <span class="title">친구 선택</span>
-            <div class="friend_list">
-              <ul class="groups">
-                <li>
-                  <input type="checkbox">
-                  <img src="../images/profile.png" name="group" alt="profile">
-                  <p>프로그래밍 스터디 (4)</p>
-                </li>
-              </ul>
-              <ul class="friends">
-                <li>
-                  <input type="checkbox" name="friend" value="홍길동">
-                  <img src="../images/profile.png" alt="profile">
-                  <p>홍길동</p>
-                </li>
-                <li>
-                  <input type="checkbox" name="friend" value="가나다">
-                  <img src="../images/profile.png" alt="profile">
-                  <p>가나다</p>
-                </li>
-                <li>
-                  <input type="checkbox" name="friend" value="라마바">
-                  <img src="../images/profile.png" alt="profile">
-                  <p>라마바</p>
-                </li>
-              </ul>
+        <div class="calendar">
+          <div class="title">
+            <button class="cal_Lbtn" onclick="prevMonth()">&lt;</button>
+            <div class="ym">
+              <div class="year"></div>
+              <div class="month"></div>
+              <div class="monthtxt"></div>
             </div>
-          </fieldset>
-          <fieldset class="choice">
-            <div class="title">
-              <span>콤비 기간</span>
-              <div class="question">?
-                <div class="explanation">모임이 필요한 기간을 선택해주세요</div>
-              </div>
+            <button class="cal_Rbtn" onclick="nextMonth()">&gt;</button>
+          </div>
+          <div class="main">
+            <div class="days">
+              <div class="day">S</div>
+              <div class="day">M</div>
+              <div class="day">T</div>
+              <div class="day">W</div>
+              <div class="day">T</div>
+              <div class="day">F</div>
+              <div class="day">S</div>
             </div>
-            <div class="organize">
-              <input type="date" name="start_combi_date" id="start_combi_date" required> ~
-              <input type="date" name="last_combi_date" id="last_combi_date" required>
-            </div>
-          </fieldset>
-          <fieldset class="choice">
-            <div class="title">
-              <span>콤비 시간</span>
-              <div class="question">?
-                <div class="explanation">모임의 시작 시간과 종료 시간을 입력해주세요</div>
-              </div>
-            </div>
-            <div class="organize">
-              <div class="start"><input type="number" min="0" max="24" value="0" name="start_hour">시
-                <input type="number" min="0" max="60" step="30" value="0" name="start_minute">분</div> ~
-              <div class="last">
-                <input type="number" min="0" max="24" value="0" name="last_hour">시
-              <input type="number" min="0" max="60" step="30" value="0" name="last_minute">분
-              </div>
-            </div>
-          </fieldset>
+            <div class="dates"></div>
+          </div>
+        </div>
+        <div class="diary">
+          <span class="today"></span>
+          <button class="plus_btn"></button>
+          <div class="schedules">
+            <ul class="schedules_list">
+              <li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li>
+              <li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속dddddddddddddddd</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li>
+              <li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속dddddddddddddddd</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li><li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속dddddddddddddddd</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li><li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속dddddddddddddddd</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li><li>
+                <div class="schedule">
+                  <div class="schedule_color"></div>
+                  <p class="schedule_time">19:00~21:00</p>
+                  <p class="schedule_info">저녁 약속dddddddddddddddd</p>
+                  <div class="schedule_edit">수정</div>
+                  <div class="schedule_delete">삭제</div>
+                </div>
+                <div class="schedule_underline"></div>
+              </li>
       
-          <!-- <fieldset>
-            <div class="title">
-              <span>콤비 시간</span>
-              <div class="question">?
-                <div class="explanation">모임에 걸리는 시간을 입력해주세요. (30분 단위)</div>
+            </ul>
+          </div>
+      
+        </div>
+      
+        <div class="popup_add_date">
+          <h4>일정</h4>
+          <form class="add_date" action="" method="get">
+            <fieldset class="name">
+              <div class="color_box">
+                <input type="radio" id="color1" name="color" value="color1" checked>
+                <label for="color1" class="color1" ></label>
+                <input type="radio" id="color2" name="color" value="color2">
+                <label for="color2" class="color2" ></label>
+                <input type="radio" id="color3" name="color" value="color3">
+                <label for="color3" class="color3" ></label>
+                <input type="radio" id="color4" name="color" value="color4">
+                <label for="color4" class="color4" ></label>
               </div>
-            </div>
-            <div class="organize">
-              <input type="number" min="0" max="10" value="0">일
-              <input type="number" min="30" max="600" step="30" value="30">분
-            </div>
-          </fieldset>
-          <fieldset>
-            <div class="title">
-              <span>콤비 시간대</span>
-              <div class="question">?
-                <div class="explanation">모임을 진행하기 원하는 시간대를 선택해주세요.</div>
-              </div>
-            </div>
-            <div class="organize">
-              <label for="dawn"><input type="checkbox" id="dawn" name="새벽">새벽 (00시~06시)</label>
-              <label for="morning"><input type="checkbox" id="morning" name="오전">오전 (06시~12시)</label>
-              <label for="afternoon"><input type="checkbox" id="afternoon" name="오후">오후 (12시~18시)</label>
-              <label for="evening"><input type="checkbox" id="evening" name="저녁">저녁 (18시~24시)</label>
-            </div>
-          </fieldset> -->
-          <fieldset class="calculator_btn">
-            <button type="submit">계산하기</button>
-          </fieldset>
-        </form>
+              <input type="text" name="" id="" placeholder="일정 이름 입력">
+            </fieldset>
+            <fieldset class="date">
+              <input type="date" name="start_date" id="start_date"> ~
+              <input type="date" name="last_date" id="last_date">
+            </fieldset>
+            <fieldset class="time">
+              <input type="checkbox" id="allday" name="종일">
+              <label for="allday">종일</label>
+              <input type="time" name="start_time" id="start_time"> ~
+              <input type="time" name="last_time" id="last_time">
+            </fieldset>
+            <fieldset class="day">
+              <input type="checkbox" id="mon" name="월">
+              <label for="mon">월</label>
+              <input type="checkbox" id="tue" name="화">
+              <label for="tue">화</label>
+              <input type="checkbox" id="wed" name="수">
+              <label for="wed">수</label>
+              <input type="checkbox" id="thu" name="목">
+              <label for="thu">목</label>
+              <input type="checkbox" id="fri" name="금">
+              <label for="fri">금</label>
+              <input type="checkbox" id="sat" name="토">
+              <label for="sat">토</label>
+              <input type="checkbox" id="sun" name="일">
+              <label for="sun">일</label>
+            </fieldset>
+            <fieldset class="add_date_btn">
+              <button type="submit">확인</button>
+              <button>취소</button>
+            </fieldset>
+          </form>
+          
+        </div>
+        <script src="../js/calendar.js"></script>
       </div>
     </div>
   </section>
