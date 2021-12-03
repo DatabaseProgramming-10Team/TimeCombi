@@ -1,17 +1,109 @@
 * {
     box-sizing: border-box;
   }
-
   
   body {
     position: relative;
     margin: 0;
     padding: 0;
-    background-attachment: scroll;
   }
 
-  .profile {
+  .img {
+    width: 60px;
+    border-radius: 30px;
+    border: 3px solid #aecefd;
+  }
+
+  /*친구관리*/
+  .set{
+    display: inline-block; 
+    margin: 0 3px;
+    align-items: center;
+    justify-content: center;
+  }
+  .set>button{
+    border-radius: 10px 10px 0px 0px; 
+    color: black;
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 10px;
+    background-color: #aecefd;
+  }
+
+   /* 친구 관리 배경 */
+   .setmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* 친구 관리 팝업창 */
+.setmodal-content {
+  border: 2px solid #aecefd;
+  background-color: #ffffff;
+    margin: 12% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 300px;
+}
+
+
+/* 목록 테이블 */
+  .list-table {
+    border-spacing: 0px; /* 셀 테두리 간격 없음 */
+    border-collapse: collapse; /* 셀 테두리 선 겹쳐서 표현 */
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  th {
+    background: white;
+    color: #aecefd;
+  }
+  
+  td {
+    background: white;
+  }
+  
+  tbody td:first-child {
     text-align: center;
+  }
+
+  #listBody tr td .btn-chk{
+    display: none;
+  } 
+
+
+
+  .groupfile{
+    text-align:left;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+
+  .groupfile > img {
+    width: 60px;
+    border-radius: 30px;
+    border: 3px solid #aecefd;
+  }
+
+
+  .profile {
+    text-align:center;
     margin-top: 20px;
   }
   
@@ -21,19 +113,65 @@
     border: 3px solid #aecefd;
   }
 
-  .box {
-    width: 440px;
-    height: 540px;
-    padding: 10px 10px;
-    background-color: #ffffff;
-    border: 2px solid #aecefd;
-    border-radius: 10px 10px 10px 10px;
-    margin: 0 auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+  .btn{
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 5px;
   }
 
+  .btn > button{
+    border: 1px solid #DDDDDD;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+ 
+
+  .btn2 > button{
+    border: 1px solid #DDDDDD;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+    .box {
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border: 2px solid #aecefd;
+    border-radius: 10px 10px 10px 10px; 
+    margin: 0 auto 35px;
+    overflow: auto;
+  }
+
+  .box1{
+    width: 520px; 
+    margin-left: 70px;
+  }
   
+  .box::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .box::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 12px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+  }
+  
+  .box:hover::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+  }
+  
+  .box::-webkit-scrollbar-track {
+    border-radius: 12px;
+  }
+
+
   a {
     text-decoration: none;
     color: black;
@@ -47,14 +185,30 @@
     border: none;
     cursor: pointer;
   }
-  
+
   ul,
   ol {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  
+
+  ul.mylist, ol.mylist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    max-width: 250px;
+    width: 100%;
+    list-style-type: circle;
+    padding-left: 30px;
+}
+
+li{
+    margin: 20px 0;
+  }
+
+
   .background_black {
     display: none;
     position: fixed;
@@ -71,6 +225,129 @@
     padding-right: 20px;
   }
 
+   /* 그룹 추가 배경 */
+   .group-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* 그룹 추가 팝업창*/
+.group-content {
+  border: 2px solid #aecefd;
+  background-color: #ffffff;
+    margin: 7% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 650px;
+}
+
+
+
+   /* 친구 추가 배경 */
+   .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* 친구 추가 팝업창 */
+.modal-content {
+  border: 2px solid #aecefd;
+  background-color: #ffffff;
+    margin: 12% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 34%;
+    height: 370px;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search{
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%,-50%);
+  margin-top: 55px;
+}
+
+.search2{
+  position: absolute;
+  top: 70%;
+  left: 48%;
+  transform: translate(-50%,-50%);
+}
+
+.add{
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.addbtn{
+    width: 90px;
+    height: 28px;
+    padding: 5px 5px;
+    border-radius: 4px;
+    background-color: #aecefd;
+    color:black;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+.addd{
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  /*margin-left: 100px;*/
+  margin-top: 10px;
+}
+.srhbtn{
+    width: 40px;
+    height: 30px;
+    padding: 5px 5px;
+    border-radius: 4px;
+    background-color: #aecefd;
+    color:black;
+    float:right;
+    margin-top: 10px;
+    margin-right: 8px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
 
 
 /* 반응형 */

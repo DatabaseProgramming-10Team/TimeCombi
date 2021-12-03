@@ -2,28 +2,17 @@
 <html lang="kor">
 <head>
     <title>타임콤비</title>
-    <style>
-        body{
-            background-color: #aecefd;
-            background-image: url('../images/loginpage.png');  
-            background-position: center top;
-            background-size: 800px;
-            background-position-y: 40px;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-        <form method="get"  style=" text-align : center; padding-top: 200px; padding-left: 420px;">
-            <input type="text" name="email " placeholder="이메일"  style="border: 2px solid #aecefd; width: 280px; height: 25px; border-radius: 5px;"><br><br>
-            <input type="password" name="pw" placeholder="비밀번호" style="border: 2px solid #aecefd;  width: 280px; height: 25px; border-radius: 5px;"><br><br><br>
-            <a href="../html/login.html">
-                <img src="../images/loginbtn.png" style="text-align: center; width: 80px;" />
-            </a><br>
-            <a href="../html/join.html" style="color: black; font-size:small; text-align: center;">회원가입</a>
-        </form>
+        <form method="post"  class="form">
+            <input type="text" class="email" name="email " placeholder="이메일"><br><br>
+            <input type="password" class="email" name="pw" placeholder="비밀번호"><br><br><br>
+            <div class="btn">
+                <button class="button" type="button" onclick="location.href='../html/main.html' "><strong>로그인</strong></button>
+              </div>
+            <a href="../html/join.html" type="submit">회원가입</a>
 
+        </form>
 </body>
 </html>
-
