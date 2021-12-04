@@ -60,7 +60,7 @@ header .profile .name .user_name {
 }
 
 header .profile .name .logout {
-  background: url(../images/logout.png) no-repeat center center;
+  background: url("../images/logout.png") no-repeat center center;
   background-size: 12px 12px;
   width: 12px;
   height: 12px;

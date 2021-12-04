@@ -1,12 +1,23 @@
-* {
-  box-sizing: border-box;
-}
-
 .plus_btn {
   background: url(../images/plus.png);
   width: 20px;
   height: 20px;
   background-size: 20px 20px;
+  line-height: 1.1rem;
+  vertical-align: middle;
+}
+
+.color1 {
+  background-color: #ff7373;
+}
+.color2 {
+  background-color: #ffc947;
+}
+.color3 {
+  background-color: #8be2a0;
+}
+.color4 {
+  background-color: #a4a9eb;
 }
 
 /* CALENDAR */
@@ -85,7 +96,7 @@
 }
 
 #clickDate {
-  background-color: seagreen;
+  background-color: #ff7373;
 }
 
 .calendar .main .days .day:nth-child(7n + 1),
@@ -107,6 +118,8 @@
 .diary .today {
   display: inline-block;
   font-size: 1.1rem;
+  line-height: 1.1rem;
+  vertical-align: middle;
   font-weight: 600;
   padding: 5px 0 5px 10px;
 }
@@ -147,8 +160,23 @@
   height: 30px;
 }
 
+.diary .schedules .schedule .schedule_edit {
+  background-image: url("../images/edit.png");
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+.diary .schedules .schedule .schedule_delete {
+  background-image: url("../images/minus.png");
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
 .diary .schedules .schedule .schedule_edit,
 .diary .schedules .schedule .schedule_delete {
+  cursor: pointer;
   margin-left: 5px;
   flex-shrink: 0;
   display: none;
@@ -190,16 +218,23 @@
 /* POPUP_ADD_DATE */
 .popup_add_date {
   position: fixed;
-  top: 20%;
-  left: 15%;
+  /* top: 20%;
+  left: calc(width / 2);*/
   width: 70%;
   height: 60%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 320px;
   display: none;
+  z-index: 2;
+  max-width: 600px;
 }
 
 .popup_add_date h4 {
@@ -260,25 +295,9 @@
   display: flex;
 }
 
-.color1 {
-  background-color: #ff7373;
-}
-.color2 {
-  background-color: #ffc947;
-}
-.color3 {
-  background-color: #8be2a0;
-}
-.color4 {
-  background-color: #a4a9eb;
-}
-
 .popup_add_date .name input[type="text"] {
   font-size: 1.1rem;
   width: 170px;
-}
-
-.popup_add_date .time input[type="checkbox"]:checked ~ input[type="time"] {
 }
 
 .popup_add_date .day input[type="checkbox"] {
@@ -311,6 +330,8 @@
   background-color: #7cabe9;
   margin: 0 10px;
   font-size: 1rem;
+  color: white;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
