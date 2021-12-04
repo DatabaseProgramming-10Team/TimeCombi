@@ -95,19 +95,19 @@
                 <table>
                    <tr>
                       <th class="name">이름</th>
-                      <td><input type="text" placeholder="이름" name="name" class="pwchk"></td>
+                      <td><input type="text" value="이름" name="name" class="pwchk"></td>
                    </tr>
                    <tr>
                       <th class="name">이메일</th>
-                      <td><input class="pwchk" type="text" name="email" placeholder="이메일"></td>
+                      <td><input class="pwchk" type="text" name="email" value="이메일"></td>
                    </tr>
                    <tr>
                       <th class="name">비밀번호</th>
-                      <td><input class="pwchk" type="password" id="pw" name="pw" onchange="check_pw()" placeholder="비밀번호"></td>
+                      <td><input class="pwchk" type="password" id="pw" name="pw" onchange="check_pw()" value="비밀번호"></td>
                    </tr>
                    <tr>
                       <th class="name ">비밀번호 확인</th>
-                      <td><input class="pwchk" type="password" id="pwCheck" onchange="check_pw()" placeholder="비밀번호 확인"></td>
+                      <td><input class="pwchk" type="password" id="pwCheck" onchange="check_pw()" value="비밀번호 확인"></td>
                     </tr>
                     <tr>
                         <th></th>
@@ -115,12 +115,12 @@
                     </tr>
                     <tr>
                         <th class="name">연락처</th>
-                        <td> <input class="pwchk" type="text" name="phone" placeholder="연락처"></td>
+                        <td> <input class="pwchk" type="text" name="phone" value="연락처"></td>
                     </tr>
                 </table>
                 <br>
                 <div class="btn">
-                    <input class="button"  value= "수정하기" type="submit">
+                    <input class="button"  value= "수정하기" type="submit" onclick="alert('정보 수정이 정상적으로 완료되었습니다.');">
                 </div>
         </form>
 
