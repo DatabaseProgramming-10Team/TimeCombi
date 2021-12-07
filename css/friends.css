@@ -123,6 +123,22 @@
     background-color: #aecefd;
   }
 
+  .set2{
+    display: inline-block; 
+    margin: 0 3px;
+    align-items: center;
+    justify-content: center;
+  }
+  .set2>button{
+    border-radius: 10px 10px 0px 0px; 
+    color: black;
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 10px;
+    background-color: white;
+  }
+
    /* 친구 관리 배경 */
    .setmodal {
     display: none; /* Hidden by default */
