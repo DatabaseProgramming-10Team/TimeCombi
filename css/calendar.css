@@ -89,6 +89,7 @@
   padding: 6px;
   padding-bottom: 55%;
   background-color: white;
+  position: relative;
 }
 
 .calendar .main .dates .date .other {
