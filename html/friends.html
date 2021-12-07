@@ -196,9 +196,7 @@
                   </ul>
                 </div>
               <span class="addd"> 
-                <div id="sendbtn" class="srhbtn" style="cursor:pointer;">
-                  취소
-                </div>
+                  <input class="sendbtn" id="sendbtn" value= "취소" type="button" >
                 </span>
             </div> 
           </div>
@@ -264,15 +262,20 @@ var setfriend = document.getElementById('setfriend');
 //친구 관리 메뉴1,2
 var send = document.getElementById("send");
 var send2 = document.getElementById("send2");
+var sendbtn = document.getElementById("sendbtn"); //친구 신청 취소, 신청 수락 버튼
 
+//보낸 친구 클릭
 send.onclick = function() {
   send.style.backgroundColor="white";     
   send2.style.backgroundColor="#aecefd";
+  sendbtn.value = "취소";
 }
 
+//받은 친구 클릭
 send2.onclick = function() {
     send2.style.backgroundColor="white";
     send.style.backgroundColor="#aecefd";
+    sendbtn.value = "승인";
 }
 
 // Get the <span> element that closes the modal
@@ -333,7 +336,7 @@ var setclose = document.getElementsByClassName("close")[2];
           modal2.style.display = "none";
       }
 
-      // /*친구 검색*/
+      // 친구 검색
       // search.onclick = function() {
           
       // }
