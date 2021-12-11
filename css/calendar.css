@@ -8,7 +8,7 @@
 }
 
 .color1 {
-  background-color: #ff7373;
+  background-color: #f8a5a5;
 }
 .color2 {
   background-color: #ffc947;
@@ -189,7 +189,6 @@
 }
 
 .diary .schedules .schedule .schedule_color {
-  background-color: yellow;
   width: 10px;
   height: 10px;
   border-radius: 5px;
